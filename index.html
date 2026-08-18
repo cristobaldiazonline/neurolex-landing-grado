@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurolex - Simulador de Examen de Grado</title>
+  
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Custom (cargado DESPUÉS de Bootstrap) -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <!-- Componente 1: Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-navy">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Neurolex</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#demo">Demo Gratis</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Planes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Landmark main -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero bg-light py-5 text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold text-navy">Prepárate para tu Examen de Grado con IA</h1>
+        <p class="lead text-muted">Evalúa tus respuestas orales, detecta vacíos en tiempo real y recibe feedback inmediato.</p>
+        <a href="#demo" class="btn btn-primary btn-lg mt-3">Probar Demo Gratis (Acto Jurídico)</a>
+      </div>
+    </section>
+
+    <!-- Demo Section (Interactiva) -->
+    <section id="demo" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Demo Gratuita: Módulo Acto Jurídico</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <!-- Componente 2: Card -->
+            <article class="card shadow-sm">
+              <div class="card-body">
+                <h3 class="h5 card-title">Pregunta de Ensayo:</h3>
+                <p class="card-text"><em>"Defina el concepto de Vicio del Consentimiento y detalle los requisitos del Error Sustancial."</em></p>
+                <div class="mb-3">
+                  <label for="respuestaSimulada" class="form-label">Escribe tu respuesta para evaluar:</label>
+                  <textarea class="form-control" id="respuestaSimulada" rows="3" placeholder="Ej: El error sustancial ocurre cuando la sustancia de la cosa es diversa..."></textarea>
+                </div>
+                <button id="btnEvaluar" class="btn btn-success w-100">Evaluar Respuesta Gratis</button>
+                
+                <!-- Feedback Dinámico inyectado por JS -->
+                <div id="feedbackContainer" class="mt-4 d-none alert alert-info"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Planes de Preparación</h2>
+        <div class="row g-4">
+          <!-- Plan Gratis -->
+          <div class="col-md-6">
+            <article class="card h-100 border-secondary">
+              <div class="card-body text-center">
+                <h3 class="card-title">Demo Gratuita</h3>
+                <p class="display-6 fw-bold my-3">$0</p>
+                <ul class="list-unstyled text-start my-4">
+                  <li>✔ Acceso ilimitado a <strong>Acto Jurídico</strong></li>
+                  <li>✔ Detección básica de vacíos</li>
+                  <li>✖ Sin acceso a Bienes ni Obligaciones</li>
+                </ul>
+                <a href="#demo" class="btn btn-outline-secondary w-100">Probar Ahora</a>
+              </div>
+            </article>
+          </div>
+          <!-- Plan Pro -->
+          <div class="col-md-6">
+            <article class="card h-100 border-primary shadow">
+              <div class="card-body text-center">
+                <span class="badge bg-primary mb-2">Recomendado</span>
+                <h3 class="card-title">Plan Grado Full</h3>
+                <p class="display-6 fw-bold text-primary my-3">$9.900 <small class="fs-6 text-muted">/ mes</small></p>
+                <ul class="list-unstyled text-start my-4">
+                  <li>✔ Cobertura completa: <strong>Civil y Procesal</strong></li>
+                  <li>✔ Detección automática de vacíos y mapa de estudio</li>
+                  <li>✔ Reportes de avance por WhatsApp</li>
+                </ul>
+                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSuscripcion">Suscribirme Ahora</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">¿Tienes dudas sobre el simulador?</h2>
+        <form class="col-md-6 mx-auto">
+          <div class="mb-3">
+            <label for="nombreContacto" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombreContacto" required>
+          </div>
+          <div class="mb-3">
+            <label for="emailContacto" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="emailContacto" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Enviar Consulta</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Componente 3: Modal de Suscripción -->
+  <div class="modal fade" id="modalSuscripcion" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Desbloquear Plan Grado Full ($9.900/mes)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Obtén acceso inmediato a todos los módulos de estudio.</p>
+          <form id="formModal">
+            <div class="mb-3">
+              <label for="emailModal" class="form-label">Tu correo de estudiante:</label>
+              <input type="email" class="form-control" id="emailModal" placeholder="ejemplo@derecho.cl" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Ir a la pasarela de pago</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landmark footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2026 Neurolex - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
